@@ -1,0 +1,14 @@
+:root {
+  --success: green;
+  --text: black;
+}
+.text-button {
+  background-color: var(--success);
+  border-radius: 0.75em;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: var(--text);
+  display: inline-block;
+}
