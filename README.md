@@ -1,4 +1,4 @@
-# Trumpet CSS
+# Trumpet CSS 🎺
 
 Trumpet CSS is not yet DONE. It could change dramatically until it is DONE. Once it is DONE it will be indicated as such here and there shall be no more updates. Until then all proceeding statements that it is DONE in this document are void. DONE software is not abandoned software.
 
