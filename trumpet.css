@@ -1,7 +1,7 @@
 :root {
   --disabled: #b0b0b0;
   --error: #ff3238;
-  --success: #00c600;
+  --success: #00c000;
   --secondary: #969696;
   --text: black;
   --warn: orange;
@@ -31,6 +31,7 @@
   padding: 0 0.7rem;
   height: 2em;
   line-height: 1rem;
+  touch-action: manipulation;
   transition:
     background-color 60ms ease-in-out,
     border-color 60ms ease-in-out,
@@ -38,6 +39,7 @@
     transform 60ms ease-in-out;
   text-decoration: none;
   user-select: none;
+  -webkit-user-select: none;
   &:active {
     transform: scale(0.94);
     box-shadow:
@@ -83,6 +85,7 @@
   background-color: var(--success);
   border: 2px solid;
   border-color: var(--success);
+  cursor: pointer;
   display: flex;
   height: 50px;
   justify-content: center;
@@ -91,6 +94,7 @@
   box-shadow:
     3px 3px 3px #00000070,
     inset 0.25em 0.25em 10px #ffffff70;
+  touch-action: manipulation;
   transition:
     background-color 60ms ease-in-out,
     box-shadow 60ms ease-in-out,
@@ -98,6 +102,7 @@
   width: 50px;
   min-width: 50px;
   user-select: none;
+  -webkit-user-select: none;
   &:active {
     transform: scale(0.94);
     box-shadow:
