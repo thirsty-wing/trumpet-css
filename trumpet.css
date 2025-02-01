@@ -17,20 +17,19 @@
   border-radius: 0.75em;
   border: 2px solid;
   border-color: var(--success);
+  box-sizing: content-box;
   color: var(--text);
-  flex-grow: 0;
+  display: inline-flex;
   cursor: pointer;
-  display: flex;
   box-shadow:
     3px 3px 3px #00000070,
     inset 0.25em 0.25em 10px #ffffff70;
-  box-sizing: content-box;
+  justify-content: center;
   flex-wrap: nowrap;
   font-family: inherit;
   font-size: 1rem;
   padding: 0 0.7rem;
   height: 2em;
-  line-height: 1rem;
   touch-action: manipulation;
   transition:
     background-color 60ms ease-in-out,
@@ -43,7 +42,7 @@
   &:active {
     transform: scale(0.94);
     box-shadow:
-      1px 1px 3px #00000070,
+      0.5px 0.5px 1px #00000070,
       inset 0.1em 0.1em 10px #ffffff60;
   }
   &.-large {
@@ -53,6 +52,9 @@
     padding: 0 0.5em;
     border-radius: 0.6em;
     height: 1.5em;
+  }
+  &.-fullwidth {
+    width: 100%;
   }
   &.-secondary {
     background-color: var(--secondary);
@@ -88,7 +90,7 @@
   box-sizing: content-box;
   color: var(--text);
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   height: 50px;
   justify-content: center;
   padding: 0;
@@ -140,6 +142,8 @@
   padding: 0.75em;
   border: 1px solid black;
   border-radius: 0.5em;
+  margin: 0;
+  box-sizing: border-box;
   &:invalid {
     border-color: red;
     outline: 1px inset red;
@@ -149,6 +153,8 @@
 .input-stack {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
 }
 
 .input-label {

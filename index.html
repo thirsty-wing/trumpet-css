@@ -1,28 +1,36 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <link rel="stylesheet" type="text/css" href="trumpet.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta charset="utf-8" />
   </head>
-  <body>
-    <h1>Text Button</h1>
-    <!-- ontouchstart is a workaround for ios to show button animation -->
-    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 0.25rem">
+  <body style="margin: 1rem">
+    <main style="max-width: 700px; margin: 0 auto">
+      <h1>Text Button</h1>
+      <!-- ontouchstart is a workaround for ios to show button animation -->
       <button ontouchstart class="text-button">Button</button>
       <a ontouchstart class="text-button" href="#">Anchor</a>
-      <input ontouchstart class="text-button" type="submit" value="Submit"/>
-      <button ontouchstart class="text-button"><span class="icon">⛭</span>&nbsp;Left Icon</button>
-      <button ontouchstart class="text-button">Right Icon&nbsp;<span class="icon">✎</span></button>
+      <input ontouchstart class="text-button" type="submit" value="Submit" />
+      <button ontouchstart class="text-button">
+        <span class="icon">⛭</span>&nbsp;Left Icon
+      </button>
+      <button ontouchstart class="text-button">
+        Right Icon&nbsp;<span class="icon">✎</span>
+      </button>
       <button ontouchstart class="text-button -large">Large</button>
       <button ontouchstart class="text-button -small">Small</button>
       <button ontouchstart class="text-button -secondary">Secondary</button>
       <button ontouchstart class="text-button -error">Error</button>
       <button ontouchstart class="text-button -warn">Warning</button>
       <button ontouchstart class="text-button -disabled">Disabled</button>
-    </div>
-    <h1>Icon Button</h1>
-    <div style="display:flex; flex-wrap:wrap; gap:0.25rem">
+      <button ontouchstart class="text-button -fullwidth">Fullwidth</button>
+      <button ontouchstart class="text-button">heyo</button>
+      <button ontouchstart class="text-button">heyah</button>
+      <h1>Icon Button</h1>
       <a ontouchstart class="icon-button" href="#">
         <img class="icon" src="directions_walk.svg" />
       </a>
@@ -59,7 +67,6 @@
           display: block;
         }
 
-
         #message-toggle {
           &:checked ~ #message-checked {
             display: block;
@@ -69,87 +76,91 @@
           }
         }
       </style>
-      <input style="display:none" type="checkbox" id="message-toggle"/>
-      <label ontouchstart class="icon-button" for="message-toggle" title="Label">
+      <input style="display: none" type="checkbox" id="message-toggle" />
+      <label
+        ontouchstart
+        class="icon-button"
+        for="message-toggle"
+        title="Label"
+      >
         <span class="icon">✓</span>
       </label>
       <div id="message-checked">Hidden checkbox is checked!</div>
       <div id="message-unchecked">Hidden checkbox is unchecked!</div>
-    </div>
-    <h1>Text Input</h1>
-    <form
-      style="
-        align-items: start;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      "
-    >
-      <div class="input-stack">
-        <label class="input-label" for="emailInput">Email<span class="requiredstar">*</span></label>
-        <input
-          class="text-input"
-          id="emailInput"
-          type="email"
-          name="email"
-          autocomplete="email"
-          placeholder="john@example.com"
-          pattern="[a-zA-Z0-9._\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-          title="Email must be valid" 
-          required
-        />
-      </div>
-      <div class="input-stack">
-        <label class="input-label" for="aboutMeTextarea">
-          About Me<span class="requiredstar">*</span> <span class="description">min 5 characters, max 10 characters</span>
-        </label>
-        <textarea
-          class="text-input" 
-          name="about-me" 
-          id="aboutMeTextarea" 
-          minlength="5" 
-          maxlength="10" 
-          required
-        ></textarea>
-      </div>
-      <div class="input-stack">
-        <label class="input-label">
-          Age <span class="description">min 0, max 130</span>
-        </label>
-        <input
-          class="text-input"
-          name="age" 
-          type="number" 
-          min="0" 
-          max="130" 
-        ></input>
-      </div>
-      <div class="input-stack">
-        <label class="input-label">
-          Date<span class="requiredstar">*</span>
-        </label>
-        <input
-          class="text-input"
-          type="date" 
-          required
-        ></input>
-      </div>
+      <h1>Text Input</h1>
+      <form
+        style="
+          align-items: start;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        "
+      >
+        <div class="input-stack">
+          <label class="input-label" for="emailInput"
+            >Email<span class="requiredstar">*</span></label
+          >
+          <input
+            class="text-input"
+            id="emailInput"
+            type="email"
+            name="email"
+            autocomplete="email"
+            placeholder="john@example.com"
+            pattern="[a-zA-Z0-9._\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            title="Email must be valid"
+            required
+          />
+        </div>
+        <div class="input-stack">
+          <label class="input-label" for="aboutMeTextarea">
+            About Me<span class="requiredstar">*</span>
+            <span class="description">min 5 characters, max 10 characters</span>
+          </label>
+          <textarea
+            class="text-input"
+            name="about-me"
+            id="aboutMeTextarea"
+            minlength="5"
+            maxlength="10"
+            required
+            style="max-width: 100%"
+          ></textarea>
+        </div>
+        <div class="input-stack">
+          <label class="input-label">
+            Age <span class="description">min 0, max 130</span>
+          </label>
+          <input
+            class="text-input"
+            name="age"
+            type="number"
+            min="0"
+            max="130"
+          />
+        </div>
+        <div class="input-stack">
+          <label class="input-label">
+            Date<span class="requiredstar">*</span>
+          </label>
+          <input class="text-input" type="date" required />
+        </div>
 
-      <input ontouchstart class="text-button" type="submit"/>
-
-    </form>
-    <h1>Bread Crumb</h1>
-    <div class="bread-crumb">
-      <a class="parameter" href="#">Home</a>
-      /
-      <a class="parameter" href="#">Settings</a>
-      /
-      <a class="parameter" href="#">Display</a>
-    </div>
-    <h1>Alert Banner</h1>
-    <div class="alert-banner">
-      <div class="heading">Helo</div>
-      <div class="body">this is what is up, hey y'all</div>
-    </div>
+        <input ontouchstart class="text-button" type="submit" />
+      </form>
+      <h1>Bread Crumb</h1>
+      <div class="bread-crumb">
+        <a class="parameter" href="#">Home</a>
+        /
+        <a class="parameter" href="#">Settings</a>
+        /
+        <a class="parameter" href="#">Display</a>
+      </div>
+      <h1>Alert Banner</h1>
+      <div class="alert-banner">
+        <div class="heading">Helo</div>
+        <div class="body">this is what is up, hey y'all</div>
+      </div>
+    </main>
   </body>
 </html>
