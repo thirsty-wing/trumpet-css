@@ -7,6 +7,8 @@
   --warn: orange;
   --soft: #666666;
   --required: red;
+  --input-inset: #969696;
+  --info: #4d90fe;
   background-color: silver;
   font-family: system-ui, sans-serif;
 }
@@ -140,13 +142,21 @@
 
 .text-input {
   padding: 0.75em;
-  border: 1px solid black;
-  border-radius: 0.5em;
-  margin: 0;
+  border: 3px inset var(--input-inset);
+  margin: 2px;
   box-sizing: border-box;
+  width: 100%;
   &:invalid {
-    border-color: red;
-    outline: 1px inset red;
+    border-color: var(--error);
+    border-radius: 3px;
+  }
+  &:focus {
+    outline: 2px solid var(--info);
+    border-color: var(--info);
+    border-radius: 3px;
+  }
+  &:invalid {
+    outline: 2px solid var(--error);
   }
 }
 
