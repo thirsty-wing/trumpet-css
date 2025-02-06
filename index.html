@@ -16,7 +16,7 @@
     <meta property="og:type" content="website" />
   </head>
   <body style="margin: 1rem">
-    <main style="max-width: 700px; margin: 0 auto">
+    <main style="max-width: 700px; margin: 0 auto; box-model: border-box">
       <h1>Text Button</h1>
       <!-- ontouchstart is a workaround for ios to show button animation -->
       <button ontouchstart class="text-button">Button</button>
@@ -150,7 +150,12 @@
           <label class="input-label">
             Date<span class="requiredstar">*</span>
           </label>
-          <input class="text-input" type="date" required />
+          <input
+            class="text-input"
+            type="date"
+            placeholder="YYYY-MM-DD"
+            required
+          />
         </div>
 
         <input ontouchstart class="text-button" type="submit" />
@@ -166,7 +171,15 @@
       <h1>Alert Banner</h1>
       <div class="alert-banner">
         <div class="heading">Helo</div>
-        <div class="body">this is what is up, hey y'all</div>
+        <div class="body">this is a standard alert banner</div>
+      </div>
+      <div class="alert-banner -success">
+        <div class="heading">Success</div>
+        <div class="body">this is a success alert banner</div>
+      </div>
+      <div class="alert-banner -warn">
+        <div class="heading">Warning</div>
+        <div class="body">this is a warning alert banner</div>
       </div>
     </main>
   </body>

@@ -19,7 +19,7 @@
   border-radius: 0.75em;
   border: 2px solid;
   border-color: var(--success);
-  box-sizing: content-box;
+  box-sizing: border-box;
   color: var(--text);
   display: inline-flex;
   cursor: pointer;
@@ -30,8 +30,9 @@
   flex-wrap: nowrap;
   font-family: inherit;
   font-size: 1rem;
-  padding: 0 0.7rem;
-  height: 2em;
+  font-weight: normal;
+  padding: 0 0.7em;
+  height: 2.25em;
   touch-action: manipulation;
   transition:
     background-color 60ms ease-in-out,
@@ -89,11 +90,11 @@
   background-color: var(--success);
   border: 2px solid;
   border-color: var(--success);
-  box-sizing: content-box;
+  box-sizing: border-box;
   color: var(--text);
   cursor: pointer;
   display: inline-flex;
-  height: 50px;
+  height: 55px;
   justify-content: center;
   padding: 0;
   font-size: 1.5rem;
@@ -107,7 +108,7 @@
     background-color 60ms ease-in-out,
     box-shadow 60ms ease-in-out,
     transform 60ms ease-in-out;
-  width: 50px;
+  width: 55px;
   user-select: none;
   -webkit-user-select: none;
   &:active {
@@ -141,11 +142,17 @@
 }
 
 .text-input {
+  text-align: left;
+  -webkit-appearance: none;
+  min-height: 3.2em;
+  display: block;
   padding: 0.75em;
   border: 3px inset var(--input-inset);
   margin: 2px;
+  font-size: 0.875rem;
   box-sizing: border-box;
   width: 100%;
+  background-color: white;
   &:invalid {
     border-color: var(--error);
     border-radius: 3px;
@@ -157,6 +164,10 @@
   }
   &:invalid {
     outline: 2px solid var(--error);
+  }
+  &::-webkit-date-and-time-value {
+    text-align: left;
+    color: var(--text);
   }
 }
 
@@ -188,20 +199,20 @@
 
 .alert-banner {
   display: flex;
-  flex-shrink: 1;
   flex-direction: column;
+  box-sizing: border-box;
   background-color: gray;
-  &.-success: {
+  &.-success {
     background-color: var(--success);
   }
-  &.-error: {
+  &.-error {
     background-color: var(--error);
   }
-  &.-warn: {
+  &.-warn {
     background-color: var(--warn);
   }
   > .heading {
-    padding: 0.5em 1em;
+    margin: 0.5em 1em;
   }
   > .body {
     padding: 1em;
