@@ -38,14 +38,53 @@
 
     <!-- extra metadata — unknown support -->
     <meta property="og:type" content="website" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=star"
+    />
   </head>
   <body style="margin: 1rem">
     <main style="max-width: 700px; margin: 0 auto; box-model: border-box">
-      <h1>Text Button</h1>
+      <h1 id="text-button-section">Text Button</h1>
       <!-- ontouchstart is a workaround for ios to show button animation -->
+      <a ontouchstart class="text-button" href="#text-button-section">Anchor</a>
       <button ontouchstart class="text-button">Button</button>
-      <a ontouchstart class="text-button" href="#">Anchor</a>
-      <input ontouchstart class="text-button" type="submit" value="Submit" />
+      <input
+        ontouchstart
+        class="text-button"
+        type="submit"
+        value="Submit Input"
+      />
+      <style>
+        #text-button-message-checked {
+          display: none;
+        }
+
+        #text-button-message-unchecked {
+          display: inline-block;
+        }
+
+        #text-button-message-toggle {
+          &:checked ~ #text-button-message-checked {
+            display: inline-block;
+          }
+          &:checked ~ #text-button-message-unchecked {
+            display: none;
+          }
+        }
+      </style>
+      <input
+        style="display: none"
+        type="checkbox"
+        id="text-button-message-toggle"
+      />
+      <label ontouchstart class="text-button" for="text-button-message-toggle">
+        Label
+      </label>
+      <div id="text-button-message-checked">Hidden checkbox is checked!</div>
+      <div id="text-button-message-unchecked">
+        Hidden checkbox is unchecked!
+      </div>
       <button ontouchstart class="text-button">
         <span class="icon">⛭</span>&nbsp;Left Icon
       </button>
@@ -59,65 +98,111 @@
       <button ontouchstart class="text-button -warn">Warning</button>
       <button ontouchstart class="text-button -disabled">Disabled</button>
       <button ontouchstart class="text-button -fullwidth">Fullwidth</button>
-      <button ontouchstart class="text-button">heyo</button>
-      <button ontouchstart class="text-button">heyah</button>
-      <h1>Icon Button</h1>
-      <a ontouchstart class="icon-button" href="#">
-        <img class="icon" src="directions_walk.svg" />
+      <h1 id="icon-button-section">Icon Button</h1>
+      <a
+        ontouchstart
+        class="icon-button"
+        href="#icon-button-section"
+        title="Anchor Element"
+      >
+        <div class="icon">A</div>
       </a>
-      <button ontouchstart class="icon-button" title="Potassium">
-        <div class="icon">K</div>
+      <button ontouchstart class="icon-button" title="Button Element">
+        <div class="icon">B</div>
       </button>
-      <button ontouchstart class="icon-button" title="Gold">
-        <span class="icon">Au</span>
-      </button>
-      <button ontouchstart class="icon-button -secondary" title="Math">
-        <span class="icon">Σ</span>
-      </button>
-      <button ontouchstart class="icon-button -error" title="Night">
-        <span class="icon">☾</span>
-      </button>
-      <button ontouchstart class="icon-button -warn" title="Mine">
-        <span class="icon">⚒</span>
-      </button>
-      <button ontouchstart class="icon-button -disabled" title="Settings">
-        <span class="icon">⛭</span>
-      </button>
-      <button ontouchstart class="icon-button" title="Castle">
-        <span class="icon">⛫</span>
-      </button>
-      <button ontouchstart class="icon-button" title="Pick">
-        <span class="icon">⛏</span>
-      </button>
+      <input
+        ontouchstart
+        class="icon-button"
+        type="submit"
+        title="Submit Input Element"
+        value="S"
+      />
       <style>
-        #message-checked {
+        #icon-button-message-checked {
           display: none;
         }
 
-        #message-unchecked {
-          display: block;
+        #icon-button-message-unchecked {
+          display: inline-block;
         }
 
-        #message-toggle {
-          &:checked ~ #message-checked {
-            display: block;
+        #icon-button-message-toggle {
+          &:checked ~ #icon-button-message-checked {
+            display: inline-block;
           }
-          &:checked ~ #message-unchecked {
+          &:checked ~ #icon-button-message-unchecked {
             display: none;
           }
         }
       </style>
-      <input style="display: none" type="checkbox" id="message-toggle" />
+      <input
+        style="display: none"
+        type="checkbox"
+        id="icon-button-message-toggle"
+      />
       <label
         ontouchstart
         class="icon-button"
-        for="message-toggle"
-        title="Label"
+        for="icon-button-message-toggle"
+        title="Label Element"
       >
-        <span class="icon">✓</span>
+        <span class="icon">L</span>
       </label>
-      <div id="message-checked">Hidden checkbox is checked!</div>
-      <div id="message-unchecked">Hidden checkbox is unchecked!</div>
+      <div id="icon-button-message-checked">Hidden checkbox is checked!</div>
+      <div id="icon-button-message-unchecked">
+        Hidden checkbox is unchecked!
+      </div>
+      <button ontouchstart class="icon-button" title="Two Characters">
+        <span class="icon">Au</span>
+      </button>
+      <button ontouchstart class="icon-button" title="Greek Symbol">
+        <span class="icon">Σ</span>
+      </button>
+      <button ontouchstart class="icon-button" title="UTF-8 Symbol">
+        <span class="icon">⛭</span>
+      </button>
+      <button ontouchstart class="icon-button" title="Emoji">
+        <span class="icon">😂</span>
+      </button>
+      <button ontouchstart class="icon-button" title="Bootstrap Icon">
+        <svg
+          data-origin="bootstrap icons"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="bi bi-person icon"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+          />
+        </svg>
+      </button>
+      <button ontouchstart class="icon-button" title="Narrow Bootstrap Icon">
+        <svg
+          data-origin="bootstrap icons"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="icon"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"
+          />
+        </svg>
+      </button>
+      <button ontouchstart class="icon-button" title="Material Icon">
+        <span class="material-symbols-outlined icon">star</span>
+      </button>
+      <button ontouchstart class="icon-button -warn" title="Warn">
+        <span class="icon">W</span>
+      </button>
+      <button ontouchstart class="icon-button -error" title="Error">
+        <span class="icon">E</span>
+      </button>
+      <button ontouchstart class="icon-button -disabled" title="Disabled">
+        <span class="icon">D</span>
+      </button>
       <h1>Text Input</h1>
       <form
         style="
