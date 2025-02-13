@@ -96,7 +96,8 @@
       <button ontouchstart class="text-button -secondary">Secondary</button>
       <button ontouchstart class="text-button -error">Error</button>
       <button ontouchstart class="text-button -warn">Warning</button>
-      <button ontouchstart class="text-button -disabled">Disabled</button>
+      <button ontouchstart class="text-button -info">Info</button>
+      <button disabled class="text-button">Disabled</button>
       <button ontouchstart class="text-button -fullwidth">Fullwidth</button>
       <h1 id="icon-button-section">Icon Button</h1>
       <a
@@ -194,13 +195,19 @@
       <button ontouchstart class="icon-button" title="Material Icon">
         <span class="material-symbols-outlined icon">star</span>
       </button>
+      <button ontouchstart class="icon-button -secondary" title="Secondary">
+        <span class="icon">S</span>
+      </button>
       <button ontouchstart class="icon-button -warn" title="Warn">
         <span class="icon">W</span>
       </button>
       <button ontouchstart class="icon-button -error" title="Error">
         <span class="icon">E</span>
       </button>
-      <button ontouchstart class="icon-button -disabled" title="Disabled">
+      <button ontouchstart class="icon-button -info" title="Info">
+        <span class="icon">I</span>
+      </button>
+      <button ontouchstart disabled class="icon-button" title="Disabled">
         <span class="icon">D</span>
       </button>
       <h1>Text Input</h1>
@@ -293,6 +300,10 @@
       <div class="alert-banner -error">
         <div class="heading">Error</div>
         <div class="body">This is an error alert banner</div>
+      </div>
+      <div class="alert-banner -info">
+        <div class="heading">Info</div>
+        <div class="body">This is an info alert banner</div>
       </div>
     </main>
   </body>
