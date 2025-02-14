@@ -45,7 +45,48 @@
   </head>
   <body style="margin: 1rem">
     <main style="max-width: 700px; margin: 0 auto; box-model: border-box">
-      <h1 id="text-button-section">Text Button</h1>
+      <h1>Trumpet CSS 🎺</h1>
+      <p>
+        Trumpet CSS is a framework-independent, easily customizable,
+        zero-js-first web UI component library. It is a single CSS file! Inspect
+        elements on this page to see how it works.
+      </p>
+      <a class="text-button -large" href="#components-section"
+        >Show me the components!</a
+      >
+      <h2>Guiding Principles</h2>
+      <ol>
+        <li>
+          Gray background. You don't need two color modes if your eyes don't
+          hurt
+        </li>
+        <li>Skeuomorphism. Embrace beauty missing from today's flat design</li>
+        <li>Component based. No utility classes to be found.</li>
+        <li>
+          Share styles via CSS classes. Instead of sharing styles via element
+          abstraction (yuck!)
+        </li>
+        <li>
+          Use CSS classes on a variety of elements. Anchors, buttons, inputs,
+          labels, oh my!
+        </li>
+        <li>
+          Well organized. Primarily uses RSCSS for good, simple organization
+        </li>
+        <li>
+          Independence and consistency. Components work 100% the same regardless
+          of other styles including resets
+        </li>
+        <li>
+          Vendor pattern. Include the css in your project and customize as you
+          like
+        </li>
+        <li>
+          Done means done. Never worry about needing to upgrade to a new version
+        </li>
+      </ol>
+      <h2 id="components-section">Components</h2>
+      <h3 id="text-button-section">Text Button</h3>
       <!-- ontouchstart is a workaround for ios to show button animation -->
       <a ontouchstart class="text-button" href="#text-button-section">Anchor</a>
       <button ontouchstart class="text-button">Button</button>
@@ -99,7 +140,7 @@
       <button ontouchstart class="text-button -info">Info</button>
       <button disabled class="text-button">Disabled</button>
       <button ontouchstart class="text-button -fullwidth">Fullwidth</button>
-      <h1 id="icon-button-section">Icon Button</h1>
+      <h3 id="icon-button-section">Icon Button</h3>
       <a
         ontouchstart
         class="icon-button"
@@ -210,7 +251,7 @@
       <button ontouchstart disabled class="icon-button" title="Disabled">
         <span class="icon">D</span>
       </button>
-      <h1>Text Input</h1>
+      <h3>Text Input</h3>
       <form
         style="
           align-items: start;
@@ -276,7 +317,7 @@
 
         <input ontouchstart class="text-button" type="submit" />
       </form>
-      <h1>Bread Crumb</h1>
+      <h3>Bread Crumb</h3>
       <div class="bread-crumb">
         <a class="parameter" href="#">Home</a>
         /
@@ -284,26 +325,28 @@
         /
         <a class="parameter" href="#">Display</a>
       </div>
-      <h1>Alert Banner</h1>
-      <div class="alert-banner">
-        <div class="heading">Helo</div>
-        <div class="body">This is a standard alert banner</div>
-      </div>
+      <h3>Alert Banner</h3>
+      <div class="alert-banner">This is a standard alert banner</div>
       <div class="alert-banner -success">
         <div class="heading">Success</div>
-        <div class="body">This is a success alert banner</div>
+        This is a success alert banner with a title
       </div>
       <div class="alert-banner -warn">
         <div class="heading">Warning</div>
-        <div class="body">This is a warning alert banner</div>
+        This is a warning alert banner
       </div>
       <div class="alert-banner -error">
         <div class="heading">Error</div>
-        <div class="body">This is an error alert banner</div>
+        This is an error alert banner
       </div>
-      <div class="alert-banner -info">
-        <div class="heading">Info</div>
-        <div class="body">This is an info alert banner</div>
+      <div class="alert-banner -info -multiline">
+        <div class="heading">
+          <img class="icon" src="info.svg" />
+          Info
+        </div>
+        This is an info alert banner. It is muli-line which looks better when
+        there is a lot of text present in the alert. It will put the header
+        above, and then let the reset of the text follow underneath.
       </div>
     </main>
   </body>

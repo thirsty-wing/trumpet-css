@@ -10,6 +10,7 @@
   --required-tc: red;
   --input-inset-tc: #969696;
   --info-tc: #4d90fe;
+  --shadow-tc: 3px 3px 3px #00000070;
   background-color: silver;
   font-family: system-ui, sans-serif;
 }
@@ -25,7 +26,7 @@
   display: inline-flex;
   cursor: pointer;
   box-shadow:
-    3px 3px 3px #00000070,
+    var(--shadow-tc),
     inset 0.25em 0.25em 10px #ffffff70;
   justify-content: center;
   flex-wrap: nowrap;
@@ -33,6 +34,7 @@
   font-size: 1rem;
   font-weight: normal;
   padding: 0 0.7em;
+  margin: 2px;
   height: 2.25em;
   touch-action: manipulation;
   transition:
@@ -107,11 +109,11 @@
   font-family: inherit;
   font-weight: 600;
   text-align: center;
-  margin: 0 0 3px 0;
+  margin: 2px;
   text-decoration: none;
   vertical-align: middle;
   box-shadow:
-    3px 3px 3px #00000070,
+    var(--shadow-tc),
     inset 0.25em 0.25em 10px #ffffff70;
   touch-action: manipulation;
   transition:
@@ -217,25 +219,45 @@
 
 .alert-banner {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem 2em;
+  border: solid color-mix(in srgb, var(--secondary-tc) 90%, black);
+  border-width: 10px 0;
+  border-radius: 3px;
+  margin: 1rem 0;
+  gap: 0.25rem;
   box-sizing: border-box;
-  background-color: gray;
+  background-color: color-mix(in srgb, var(--secondary-tc) 80%, white);
+  box-shadow: var(--shadow-tc);
   &.-success {
-    background-color: var(--success-tc);
+    background-color: color-mix(in srgb, var(--success-tc) 80%, white);
+    border-color: color-mix(in srgb, var(--success-tc) 90%, black);
   }
   &.-error {
-    background-color: var(--error-tc);
+    background-color: color-mix(in srgb, var(--error-tc) 80%, white);
+    border-color: color-mix(in srgb, var(--error-tc) 90%, black);
   }
   &.-warn {
-    background-color: var(--warn-tc);
+    background-color: color-mix(in srgb, var(--warn-tc) 80%, white);
+    border-color: color-mix(in srgb, var(--warn-tc) 90%, black);
   }
   &.-info {
-    background-color: var(--info-tc);
+    background-color: color-mix(in srgb, var(--info-tc) 80%, white);
+    border-color: color-mix(in srgb, var(--info-tc) 90%, black);
+  }
+  &.-multiline {
+    flex-direction: column;
+    align-items: start;
   }
   > .heading {
-    margin: 0.5em 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: 700;
+    font-size: 1.12rem;
   }
-  > .body {
-    padding: 1em;
+
+  > .heading > .icon {
+    width: 2rem;
   }
 }
