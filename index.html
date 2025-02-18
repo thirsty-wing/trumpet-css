@@ -92,61 +92,84 @@
           Done means done. Never worry about needing to upgrade to a new version
         </li>
       </ol>
+      <h2>Installation</h2>
+      <p>
+        Trumpet CSS is designed to be vendored. Copy the trumpet.css file into
+        your project. Then you can reference the stylesheet in the head of your
+        html document like so
+      </p>
+      <pre
+        class="code-snippet"
+      ><code>&lt;link rel="stylesheet" href="/public/trumpet.css" /&gt;</code></pre>
+      <p>
+        This assumes your project has a public directory from which it serves
+        static files.
+      </p>
+      <p>You're now ready to use Trumpet CSS.</p>
+      <h2>Usage</h2>
+      <p>
+        <strong
+          >Inspect elements on this page to see their html structure. 👀</strong
+        >
+        You can then copy from developer tools and paste into your project.
+        Trumpet CSS is so simple, that's all you need!
+      </p>
+      <p>
+        Trumpet CSS components follow a CSS convetion called
+        <a href="https://rstacruz.github.io/rscss/"
+          >Resonable System for CSS Stylesheet Structure (RSCSS)</a
+        >. Here is a quick overview.
+      </p>
+      <ul>
+        <li>Components are kebab-case and at least two words</li>
+        <li>
+          Variants start with a hyphen, are lower-case and contain no hyphens.
+          IE: "-largecolumns"
+        </li>
+        <li>
+          Inner elements of a component are lower-case and contain no hypens.
+          IE: "innercolumn"
+        </li>
+      </ul>
+      <p>Here is an imaginary component to demonstrate the structure</p>
+      <pre
+        class="code-snippet"
+      ><code>&lt;div class="imaginary-component -large"&gt;
+  &lt;div class="topsection"&gt;Hello&lt;/div&gt;
+  &lt;div class="lowersection -wide"&gt;World!&lt;/div&gt;
+&lt;/div&gt;</code></pre>
       <h2 id="components-section">Components</h2>
-      <h3 id="text-button-section">Text Button</h3>
-      <!-- ontouchstart is a workaround for ios to show button animation -->
-      <a ontouchstart class="text-button" href="#text-button-section">Anchor</a>
-      <button ontouchstart class="text-button">Button</button>
-      <input
-        ontouchstart
-        class="text-button"
-        type="submit"
-        value="Submit Input"
-      />
-      <style>
-        #text-button-message-checked {
-          display: none;
-        }
-
-        #text-button-message-unchecked {
-          display: inline-block;
-        }
-
-        #text-button-message-toggle {
-          &:checked ~ #text-button-message-checked {
-            display: inline-block;
-          }
-          &:checked ~ #text-button-message-unchecked {
-            display: none;
-          }
-        }
-      </style>
-      <input
-        style="display: none"
-        type="checkbox"
-        id="text-button-message-toggle"
-      />
-      <label ontouchstart class="text-button" for="text-button-message-toggle">
-        Label
-      </label>
-      <div id="text-button-message-checked">Hidden checkbox is checked!</div>
-      <div id="text-button-message-unchecked">
-        Hidden checkbox is unchecked!
+      <h3>Alert Banner</h3>
+      <div class="alert-banner">This is the default success alert banner</div>
+      <div class="alert-banner -secondary">
+        <div class="heading">Secondary</div>
+        This is a secondary alert banner with a title
       </div>
-      <button ontouchstart class="text-button">
-        <span class="icon">⛭</span>&nbsp;Left Icon
-      </button>
-      <button ontouchstart class="text-button">
-        Right Icon&nbsp;<span class="icon">✎</span>
-      </button>
-      <button ontouchstart class="text-button -large">Large</button>
-      <button ontouchstart class="text-button -small">Small</button>
-      <button ontouchstart class="text-button -secondary">Secondary</button>
-      <button ontouchstart class="text-button -error">Error</button>
-      <button ontouchstart class="text-button -warn">Warning</button>
-      <button ontouchstart class="text-button -info">Info</button>
-      <button disabled class="text-button">Disabled</button>
-      <button ontouchstart class="text-button -fullwidth">Fullwidth</button>
+      <div class="alert-banner -warn">
+        <div class="heading">Warning</div>
+        This is a warning alert banner
+      </div>
+      <div class="alert-banner -error">
+        <div class="heading">Error</div>
+        This is an error alert banner
+      </div>
+      <div class="alert-banner -info -multiline">
+        <div class="heading">
+          <img class="icon" src="info.svg" />
+          Info
+        </div>
+        This is an info alert banner. It is muli-line which looks better when
+        there is a lot of text present in the alert. It will put the header
+        above, and then let the reset of the text follow underneath.
+      </div>
+      <h3>Bread Crumb</h3>
+      <div class="bread-crumb">
+        <a class="parameter" href="#">Home</a>
+        /
+        <a class="parameter" href="#">Settings</a>
+        /
+        <a class="parameter" href="#">Display</a>
+      </div>
       <h3 id="icon-button-section">Icon Button</h3>
       <a
         ontouchstart
@@ -258,6 +281,60 @@
       <button ontouchstart disabled class="icon-button" title="Disabled">
         <span class="icon">D</span>
       </button>
+
+      <h3 id="text-button-section">Text Button</h3>
+      <a ontouchstart class="text-button" href="#text-button-section">Anchor</a>
+      <button class="text-button" ontouchstart>Button</button>
+      <input
+        ontouchstart
+        class="text-button"
+        type="submit"
+        value="Submit Input"
+      />
+      <style>
+        #text-button-message-checked {
+          display: none;
+        }
+
+        #text-button-message-unchecked {
+          display: inline-block;
+        }
+
+        #text-button-message-toggle {
+          &:checked ~ #text-button-message-checked {
+            display: inline-block;
+          }
+          &:checked ~ #text-button-message-unchecked {
+            display: none;
+          }
+        }
+      </style>
+      <input
+        style="display: none"
+        type="checkbox"
+        id="text-button-message-toggle"
+      />
+      <label ontouchstart class="text-button" for="text-button-message-toggle">
+        Label
+      </label>
+      <div id="text-button-message-checked">Hidden checkbox is checked!</div>
+      <div id="text-button-message-unchecked">
+        Hidden checkbox is unchecked!
+      </div>
+      <button class="text-button" ontouchstart>
+        <span class="icon">⛭</span>&nbsp;Left Icon
+      </button>
+      <button ontouchstart class="text-button">
+        Right Icon&nbsp;<span class="icon">✎</span>
+      </button>
+      <button ontouchstart class="text-button -large">Large</button>
+      <button ontouchstart class="text-button -small">Small</button>
+      <button ontouchstart class="text-button -secondary">Secondary</button>
+      <button ontouchstart class="text-button -error">Error</button>
+      <button ontouchstart class="text-button -warn">Warning</button>
+      <button ontouchstart class="text-button -info">Info</button>
+      <button disabled class="text-button">Disabled</button>
+      <button ontouchstart class="text-button -fullwidth">Fullwidth</button>
       <h3>Text Input</h3>
       <form
         style="
@@ -324,37 +401,6 @@
 
         <input ontouchstart class="text-button" type="submit" />
       </form>
-      <h3>Bread Crumb</h3>
-      <div class="bread-crumb">
-        <a class="parameter" href="#">Home</a>
-        /
-        <a class="parameter" href="#">Settings</a>
-        /
-        <a class="parameter" href="#">Display</a>
-      </div>
-      <h3>Alert Banner</h3>
-      <div class="alert-banner">This is a standard alert banner</div>
-      <div class="alert-banner -success">
-        <div class="heading">Success</div>
-        This is a success alert banner with a title
-      </div>
-      <div class="alert-banner -warn">
-        <div class="heading">Warning</div>
-        This is a warning alert banner
-      </div>
-      <div class="alert-banner -error">
-        <div class="heading">Error</div>
-        This is an error alert banner
-      </div>
-      <div class="alert-banner -info -multiline">
-        <div class="heading">
-          <img class="icon" src="info.svg" />
-          Info
-        </div>
-        This is an info alert banner. It is muli-line which looks better when
-        there is a lot of text present in the alert. It will put the header
-        above, and then let the reset of the text follow underneath.
-      </div>
     </main>
   </body>
 </html>
