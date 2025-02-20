@@ -63,35 +63,73 @@
       >
       <h2>Guiding Principles</h2>
       <ol>
+        <li>It is okay to use inline styles</li>
         <li>
-          Gray background. You don't need two color modes if your eyes don't
-          hurt
+          CSS classes are for referencing repeated styles as components of the
+          UI
         </li>
-        <li>Skeuomorphism. Embrace beauty missing from today's flat design</li>
-        <li>Component based. No utility classes to be found.</li>
-        <li>
-          Share styles via CSS classes. Instead of sharing styles via element
-          abstraction (yuck!)
-        </li>
-        <li>
-          Use CSS classes on a variety of elements. Anchors, buttons, inputs,
-          labels, oh my!
-        </li>
-        <li>
-          Well organized. Primarily uses RSCSS for good, simple organization
-        </li>
-        <li>
-          Independence and consistency. Components work 100% the same regardless
-          of other styles including resets
-        </li>
-        <li>
-          Vendor pattern. Include the css in your project and customize as you
-          like
-        </li>
-        <li>
-          Done means done. Never worry about needing to upgrade to a new version
-        </li>
+        <li>No build</li>
+        <li>Prefer a shallow DOM tree</li>
+        <li>No breaking changes</li>
+        <li>Vendor pattern</li>
+        <li>Easy customization</li>
       </ol>
+      <p>
+        The idea of splitting CSS and HTML into seperate files in order to have
+        separation of concerns is not a good idea, and probably not the reason
+        CSS stylesheets were first implemented (looking into this). One thing we
+        can learn from the recent popularity of CSS utility class based, and
+        CSS-in-JS solutions is that putting styles in your HTML is a perfectly
+        good way to style your page and can feel pretty good. In our case, we
+        just use the style attribute. The added benefit of styles in HTML is
+        locality of behavior. Our approach is that things should probably be
+        done this way, until it is inadequate or the style is repeated too
+        frequently. In that case, a CSS class should be used.
+      </p>
+      <p>
+        CSS as the engine of repeated styles (CATEORS) is the idea that when a
+        need for applying a set of styles to multiple elements exists, we can
+        put that set of styles in a single CSS class and then use that class on
+        the needed elements. This is in opposition to the solution that utility
+        class based solutions propose, which is html element abstraction. By
+        using CATEORS, the HTML can be written in a flat fashion without element
+        abstractions.
+      </p>
+      <p>No build is awesome and highly underrated.</p>
+      <p>
+        A shallow DOM tree is preferable for performance reasons. This is
+        achieved by using CATEORS, and ensuring components themselves are
+        applied to a shallow HTML structure.
+      </p>
+      <p>
+        Breaking changes are a bad experience for consumers of a library. We
+        won't do it!
+      </p>
+      <p>
+        The Vendor pattern means that you copy the code into your project. This
+        makes it so your application will never break with some new update.
+      </p>
+      <p>
+        Since this is meant to be vendored and it is no build, you have the
+        ability to change the code yourself to customize it. No need to learn a
+        UI library's abstraction for customization with little documentation.
+        Trumpet CSS is just CSS!
+      </p>
+      <h2>Guiding Preferences</h2>
+      <ol>
+        <li>One mid-toned color mode</li>
+        <li>Skeuomorphism</li>
+      </ol>
+      <p>
+        The reason that light mode and dark mode are a thing today is because
+        light mode hurts your eyes. If a middle-of-the road color scheme is
+        used, then there is no pain in the eyes and no need to implement two
+        color modes.
+      </p>
+      <p>
+        Skeuomorphism is just cool. Things should look vibrant and have depth.
+        Flat UI is the brutalist design of the web and it should be avoided.
+      </p>
       <h2>Installation</h2>
       <p>
         Trumpet CSS is designed to be vendored. Copy the trumpet.css file into
@@ -109,7 +147,7 @@
       <h2>Usage</h2>
       <p>
         <strong
-          >Inspect elements on this page to see their html structure. 👀</strong
+          >Inspect elements on this page to see their html structure.</strong
         >
         You can then copy from developer tools and paste into your project.
         Trumpet CSS is so simple, that's all you need!
@@ -139,6 +177,10 @@
   &lt;div class="lowersection -wide"&gt;World!&lt;/div&gt;
 &lt;/div&gt;</code></pre>
       <h2 id="components-section">Components</h2>
+      <strong
+        >👀 Inspect elements on this page to see their HTML structure.</strong
+      >
+      Then copy and paste them into your project!
       <h3>Alert Banner</h3>
       <div class="alert-banner">This is the default success alert banner</div>
       <div class="alert-banner -secondary">
