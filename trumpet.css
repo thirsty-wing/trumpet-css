@@ -251,15 +251,13 @@
   > .bottomcontent {
     grid-column-start: 1;
     grid-row-start: 2;
+    background-color: var(--success-tc);
     overflow: hidden;
-    visibility: hidden;
     transition: padding 250ms ease-in-out;
     padding: 0 1rem;
   }
   > .trigger:checked ~ .bottomcontent {
     transition: padding 250ms ease-in-out;
-    background-color: var(--success-tc);
-    visibility: visible;
     min-height: fit-content;
     padding: 1rem;
   }
