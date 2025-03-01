@@ -46,7 +46,21 @@
   </head>
   <body style="margin: 1rem">
     <main style="max-width: 700px; margin: 0 auto; box-model: border-box">
-      <h1>🎺 Trumpet CSS</h1>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h1>🎺 Trumpet CSS</h1>
+        <a
+          class="icon-button"
+          href="https://github.com/thirsty-wing/trumpet-css"
+        >
+          <img class="icon" src="git.svg" />
+        </a>
+      </div>
       <p><i>🎵 How sweet the sound 🎶</i></p>
 
       <img
@@ -182,28 +196,76 @@
       >
       Then copy and paste them into your project!
       <h3>Accordion Group</h3>
-      🚧 Under Construction 🚧
       <div class="accordion-section">
-        <div class="topcontent">top content</div>
-        <input class="trigger" type="radio" name="something" />
-        <div class="bottomcontent">bottom content</div>
+        <input class="trigger" type="checkbox" />
+        <div class="topcontent">
+          Using checkbox input<img class="icon" src="chevron-down.svg" />
+        </div>
+        <div class="bottomcontent">
+          This can hide and show by clicking the top content
+        </div>
       </div>
       <div class="accordion-section">
+        <input class="trigger" type="radio" />
         <div class="topcontent">
-          This topcontent is multiline and contains a lot of text. You can see
-          that it expands to the proper size.
+          Using radio input<img class="icon" src="chevron-down.svg" />
         </div>
+        <div class="bottomcontent">
+          This will only show and not hide by clicking the top content
+        </div>
+      </div>
+      <div class="accordion-section">
         <input class="trigger" type="radio" name="something" />
+        <div class="topcontent">
+          The rest of these use grouped radio inputs<img
+            class="icon"
+            src="chevron-down.svg"
+          />
+        </div>
+        <div class="bottomcontent">
+          Click one of the following radio buttons to expand it and collapse
+          this one. This is more true to the traditional definition of an
+          accordion.
+        </div>
+      </div>
+      <div class="accordion-section -secondary">
+        <input class="trigger" type="radio" name="something" />
+        <div class="topcontent">
+          Secondary variant. This topcontent is multi-line and contains a lot of
+          text. You can see that it expands to the proper size.<img
+            class="icon"
+            src="chevron-down.svg"
+          />
+        </div>
         <div class="bottomcontent">some bottom content is here</div>
       </div>
-      <div class="accordion-section">
-        <div class="topcontent">multiline content</div>
+      <div class="accordion-section -warn">
         <input class="trigger" type="radio" name="something" />
+        <div class="topcontent">
+          Warning variant. Multi-line Content<img
+            class="icon"
+            src="chevron-down.svg"
+          />
+        </div>
         <div class="bottomcontent">
           Here you can see that the bottom content can be multi-line and contain
           a lot of text. The accordion will size itself to the proper size as it
           expands and collapses.
         </div>
+      </div>
+      <div class="accordion-section -error">
+        <input class="trigger" type="radio" name="something" />
+        <div class="topcontent">
+          Error Variant<img class="icon" src="chevron-down.svg" />
+        </div>
+        <div class="bottomcontent">bottom content</div>
+      </div>
+      <div class="accordion-section -info">
+        <input class="trigger" type="radio" name="something" />
+        <div class="topcontent">
+          Info Variant<img class="icon" src="chevron-down.svg" />
+        </div>
+        <div class="bottomcontent">bottom content</div>
       </div>
       <h3>Alert Banner</h3>
       <div class="alert-banner">This is the default success alert banner</div>

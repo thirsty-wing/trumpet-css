@@ -221,19 +221,49 @@
   display: grid;
   grid-template-rows: max-content 0fr;
   overflow: hidden;
-  background-color: var(--secondary-tc);
   transition: grid-template-rows 250ms ease-in-out;
   margin: 2px;
-  border-radius: 0.75em;
   visibility: visible;
+  margin: 0.5rem 0;
+  border-top-right-radius: 0.75em;
+  box-shadow: var(--shadow-tc);
   &:has(> .trigger:checked) {
     grid-template-rows: max-content 1fr;
   }
   > .topcontent {
-    padding: 1rem;
-    padding-inline-end: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background-color: var(--success-tc);
+    border-top-left-radius: 0.75em;
+    border-top-right-radius: 0.75em;
+    border: 2px solid var(--success-tc);
     grid-column-start: 1;
     grid-row-start: 1;
+    box-shadow: inset 0.25em 0.25em 10px #ffffff70;
+    font-weight: 600;
+    font-size: 1.12rem;
+  }
+  > .topcontent > .icon {
+    width: 2rem;
+    transition: transform 125ms;
+  }
+  &.-secondary > .topcontent {
+    background-color: var(--secondary-tc);
+    border-color: var(--secondary-tc);
+  }
+  &.-warn > .topcontent {
+    background-color: var(--warn-tc);
+    border-color: var(--warn-tc);
+  }
+  &.-error > .topcontent {
+    background-color: var(--error-tc);
+    border-color: var(--error-tc);
+  }
+  &.-info > .topcontent {
+    background-color: var(--info-tc);
+    border-color: var(--info-tc);
   }
   > .trigger {
     appearance: none;
@@ -244,22 +274,29 @@
     grid-column-start: 1;
     grid-row-start: 1;
     cursor: pointer;
-  }
-  > .trigger:checked {
-    cursor: default;
+    z-index: 1;
   }
   > .bottomcontent {
     grid-column-start: 1;
     grid-row-start: 2;
-    background-color: var(--success-tc);
     overflow: hidden;
     transition: padding 250ms ease-in-out;
+    border: 0 solid var(--secondary-tc);
+    border-width: 0 2px;
     padding: 0 1rem;
+  }
+  > .trigger:checked ~ .topcontent {
+    box-shadow: inset 0.1em 0.1em 10px #ffffff60;
+    transition: box-shadow 250ms ease-in-out;
+  }
+  > .trigger:checked ~ .topcontent > .icon {
+    transform: rotate(180deg);
   }
   > .trigger:checked ~ .bottomcontent {
     transition: padding 250ms ease-in-out;
     min-height: fit-content;
     padding: 1rem;
+    border-bottom: 2px;
   }
 }
 
