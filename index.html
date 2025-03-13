@@ -45,7 +45,7 @@
     <title>🎺 Trumpet CSS</title>
   </head>
   <body style="margin: 1rem">
-    <main style="max-width: 700px; margin: 0 auto; box-model: border-box">
+    <main style="max-width: 960px; margin: 0 auto; box-model: border-box">
       <div
         style="
           display: flex;
@@ -298,6 +298,66 @@
         /
         <a class="parameter" href="#">Display</a>
       </div>
+      <h3>Card Box</h3>
+      <article class="card-box">
+        <img
+          class="image"
+          src="https://picsum.photos/seed/1234/200/100"
+          alt="stock photo 1234"
+        />
+        <p class="bottomcontent">
+          This is a card with a single sentence for a user to see.
+        </p>
+      </article>
+      <article class="card-box">
+        <img
+          class="image"
+          src="https://picsum.photos/seed/4321/200/100"
+          alt="stock photo 4321"
+        />
+        <div class="bottomcontent">
+          <span class="title">Great Views</span>
+          <p>
+            Explore nature as part of a unique experience in this national park.
+          </p>
+          <a class="text-button -info">Learn More</a>
+        </div>
+      </article>
+      <article class="card-box">
+        <img
+          class="image"
+          src="https://picsum.photos/seed/777/200/100"
+          alt="stock photo 4321"
+        />
+        <div class="bottomcontent">
+          <span class="title">Inclement Weather</span>
+          <p>
+            There is a warning in place for weather in your area. High winds and
+            precipitation expected.
+          </p>
+          <a class="text-button -warn">More</a>
+        </div>
+      </article>
+      <article class="card-box">
+        <img
+          class="image"
+          src="https://picsum.photos/seed/4/200/100"
+          alt="stock photo 4321"
+        />
+        <div class="bottomcontent">
+          <span class="title">Delicious Strawberries</span>
+          <p>
+            These delicious strawberries can hit the spot. Come try some at our
+            farmer's market!
+          </p>
+          <button class="icon-button">
+            <img class="icon" src="heart-svgrepo-com.svg" />
+          </button>
+          <button class="icon-button -secondary">
+            <img class="icon" src="share-nodes-svgrepo-com.svg" />
+          </button>
+        </div>
+      </article>
       <h3 id="icon-button-section">Icon Button</h3>
       <a
         ontouchstart

@@ -173,7 +173,7 @@
   box-sizing: border-box;
   width: 100%;
   background-color: white;
-  &:invalid {
+  &:user-invalid {
     border-color: var(--error-tc);
     border-radius: 3px;
   }
@@ -182,7 +182,7 @@
     border-color: var(--info-tc);
     border-radius: 3px;
   }
-  &:invalid {
+  &:user-invalid {
     outline: 2px solid var(--error-tc);
   }
   &::-webkit-date-and-time-value {
@@ -297,6 +297,30 @@
     min-height: fit-content;
     padding: 1rem;
     border-bottom: 2px;
+  }
+}
+
+.card-box {
+  max-width: 256px;
+  background-color: darkgray;
+  box-shadow: var(--shadow-tc);
+  border-radius: 3px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 3px;
+  vertical-align: top;
+  > .image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+  > .bottomcontent {
+    padding: 16px;
+    margin: 0;
+  }
+  > .bottomcontent > .title {
+    font-weight: 700;
+    font-size: 1.12rem;
   }
 }
 
