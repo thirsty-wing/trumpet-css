@@ -225,7 +225,7 @@
   margin: 2px;
   visibility: visible;
   margin: 0.5rem 0;
-  border-top-right-radius: 0.75em;
+  border-top-right-radius: 0.75rem;
   box-shadow: var(--shadow-tc);
   &:has(> .trigger:checked) {
     grid-template-rows: max-content 1fr;
@@ -236,8 +236,8 @@
     justify-content: space-between;
     padding: 0.75rem 1rem;
     background-color: var(--success-tc);
-    border-top-left-radius: 0.75em;
-    border-top-right-radius: 0.75em;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
     border: 2px solid var(--success-tc);
     grid-column-start: 1;
     grid-row-start: 1;
@@ -271,6 +271,10 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     grid-column-start: 1;
     grid-row-start: 1;
     cursor: pointer;
